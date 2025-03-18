@@ -19,7 +19,10 @@ struct ColorModifiers: View {
     var body: some View {
         ScrollView {
             SplitColorScheme {
-
+                Color.purple.opacity(0.5)
+                Color.purple.brightness(0.5)
+                Color.purple.grayscale(0.5)
+                Color.red.mix(with: .green, by: 0.5)
             }
         }
     }

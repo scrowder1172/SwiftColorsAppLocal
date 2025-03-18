@@ -11,11 +11,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     @State private var viewSelection: ColorView = .standardSwiftUI
-    
     var body: some View {
-        NavigationStack {
+        NavigationStack{
             Form {
                 Picker("Select View Type", selection: $viewSelection) {
                     ForEach(ColorView.allCases) { selection in
@@ -24,6 +22,10 @@ struct ContentView: View {
                     }
                 }
             }
+            .frame(height: 50)
+                viewSelection
+            .padding()
+            .navigationTitle("SwiftUI Colors")
         }
     }
 }
@@ -63,7 +65,7 @@ enum ColorView: Identifiable, CaseIterable, View {
         }
     }
     
-    var id: String {
+    nonisolated var id: String {
         return String(describing: self)
     }
     
